@@ -1,0 +1,13 @@
+                ExpiresByType text/javascript "access plus 1 hour"
+                ExpiresByType text/ecmascript "access plus 1 hour"
+                ExpiresByType image/gif "access plus 1 hour"
+                ExpiresByType image/jpg "access plus 1 hour"
+                ExpiresByType image/jpeg "access plus 1 hour"
+                ExpiresByType image/png "access plus 1 hour"
+                ExpiresByType image/ico "access plus 1 hour"
+                ExpiresByType image/icon "access plus 1 hour"
+                ExpiresByType image/x-ico "access plus 1 hour"
+                ExpiresByType image/x-icon "access plus 1 hour"
+                ExpiresByType video/x-flv "access plus 1 hour"
+                ExpiresByType application/x-shockwave-flash "access plus 1 hour"
+

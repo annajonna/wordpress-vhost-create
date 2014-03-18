@@ -1,0 +1,13 @@
+                ExpiresByType text/javascript "access plus 1 week"
+                ExpiresByType text/ecmascript "access plus 1 week"
+                ExpiresByType image/gif "access plus 1 week"
+                ExpiresByType image/jpg "access plus 1 week"
+                ExpiresByType image/jpeg "access plus 1 week"
+                ExpiresByType image/png "access plus 1 week"
+                ExpiresByType image/ico "access plus 1 week"
+                ExpiresByType image/icon "access plus 1 week"
+                ExpiresByType image/x-ico "access plus 1 week"
+                ExpiresByType image/x-icon "access plus 1 week"
+                ExpiresByType video/x-flv "access plus 1 week"
+                ExpiresByType application/x-shockwave-flash "access plus 1 week"
+

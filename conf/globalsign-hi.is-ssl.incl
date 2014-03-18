@@ -1,0 +1,7 @@
+SSLEngine on
+SSLProtocol all -SSLv2
+SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:RC4+RSA:+HIGH:+MEDIUM:+LOW
+SSLCertificateFile /etc/pki/tls/certs/globalsign-hi.is.pem
+SSLCertificateChainFile /etc/pki/tls/certs/globalsign-chain.pem
+SSLCertificateKeyFile /etc/pki/tls/private/globalsign.key
+

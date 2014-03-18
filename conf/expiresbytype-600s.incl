@@ -1,0 +1,13 @@
+                ExpiresByType text/javascript "access plus 600 seconds"
+                ExpiresByType text/ecmascript "access plus 600 seconds"
+                ExpiresByType image/gif "access plus 600 seconds"
+                ExpiresByType image/jpg "access plus 600 seconds"
+                ExpiresByType image/jpeg "access plus 600 seconds"
+                ExpiresByType image/png "access plus 600 seconds"
+                ExpiresByType image/ico "access plus 600 seconds"
+                ExpiresByType image/icon "access plus 600 seconds"
+                ExpiresByType image/x-ico "access plus 600 seconds"
+                ExpiresByType image/x-icon "access plus 600 seconds"
+                ExpiresByType video/x-flv "access plus 600 seconds"
+                ExpiresByType application/x-shockwave-flash "access plus 600 seconds"
+

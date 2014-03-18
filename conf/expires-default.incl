@@ -1,0 +1,3 @@
+ExpiresActive On
+ExpiresDefault "access plus 300 seconds"
+

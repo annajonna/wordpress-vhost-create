@@ -1,0 +1,5 @@
+php_admin_flag engine Off
+suPHP_Engine on
+AddHandler x-httpd-php .php .php3 .php4 .php5
+suPHP_AddHandler x-httpd-php
+#suPHP_UserGroup annaj starf

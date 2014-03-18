@@ -1,0 +1,10 @@
+# Háskóli Íslands, Anna Jonna Armannsdottir
+# GPL v3 License
+<VirtualHost 0.0.0.0:80>
+        ServerName template.hi.is
+        ServerAlias www.template.hi.is
+Include vhosts.d/alias/template.hi.is.dirty-serveralia[s]
+Include vhosts.d/alias/template.hi.is.clean-serveralia[s]
+        ServerAdmin root@hi.is
+        Redirect Permanent / https://template.hi.is/
+</VirtualHost>

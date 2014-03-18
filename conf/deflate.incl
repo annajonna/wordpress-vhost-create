@@ -1,0 +1,16 @@
+<IfModule mod_deflate.c>
+        BrowserMatch ^Mozilla/4 gzip-only-text/html
+        BrowserMatch ^Mozilla/4\.0[678] no-gzip
+        BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+        SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|dng|cr2|pef|nef)$ no-gzip dont-vary
+        SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar|ace|xz)$ no-gzip dont-vary
+        SetEnvIfNoCase Request_URI \.(?:mov|mp4|avi|mkv|mpe?g|ogg|ogv|mp3|webm|pdf|rm)$ no-gzip dont-vary
+
+        AddOutputFilterByType DEFLATE text/html text/xml text/css text/plain
+        AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml
+        AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml
+        AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+        AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
+        AddOutputFilterByType DEFLATE font/truetype font/opentype
+</IfModule>
+
