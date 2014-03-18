@@ -1,0 +1,39 @@
+This project started a few months ago, when I realized that many if not all virtual host config files, were outdated and buggy, in the clusters that I manage at the University of Iceland. 
+
+The tool for managing them was gone, and probably no good anyway. 
+
+So I set out with a few design principles: 
+* Use few templates and update them. 
+* Automatic generation of config files from templates. 
+* Use static files for aliases and web redirects. 
+* Very fast and easy to set up http, https and redirection. 
+* Very fast and easy to change a vhost configuration, back and forth, without losing information. 
+* Works for web clusters, as well as for stand alone web servers. 
+
+All operations on file system level as user with some privileges. Create the necessary directory hierarchy: 
+$ mkdir -p /etc/httpd/vhosts.d/{alias,scripts,redirect}
+
+Short version: 
+$ vhost-create.sh example
+$ scripts/example.hi.is_http-www 
+$ vhosts-generate.sh
+# service httpd restart
+
+A bit more detailed version: 
+
+For site creation: 
+$ vhost-create.sh example
+
+This creates a symlink (to a script) with the name of the site and its type. By running the symlink, the script calls the templates according to the type of the website. E.g.: 
+
+$ scripts/example.hi.is_http-www 
+
+Now this creates vhosts files in the directory /etc/httpd/vhosts.d for example.hi.is . Every time the templates are changed or updated, all I have to do is to run all symlinks in the scripts directory. 
+
+The next step is to assign correct IP number to the vhosts and distribute the vhosts files out to each server in the cluster. This is done by the script: 
+
+$ vhosts-generate.sh
+
+Then all you have to do is to reload the server config. 
+
+# service httpd restart
