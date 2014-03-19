@@ -39,8 +39,10 @@ http)
   TEMPLB="/etc/httpd/conf/template.hi.is.ipv4.https.redirect" 
   ;;
 https)
-  TEMPLA="/etc/httpd/conf/template.hi.is.ipv4.http.redirect" 
-  TEMPLB="/etc/httpd/conf/template.hi.is.ipv4.https.conf" 
+  TEMPLA="/etc/httpd/conf/template.hi.is.ipv4.https.conf" 
+  TEMPLB="/etc/httpd/conf/template.hi.is.ipv4.http.redirect" 
+  SKRA="/etc/httpd/vhosts.d/${LEN}.https.conf" 
+  SKRB="/etc/httpd/vhosts.d/${LEN}.http.conf" 
   ;;
 https+http)
   TEMPLA="/etc/httpd/conf/template.hi.is.ipv4.http-www.conf" 
