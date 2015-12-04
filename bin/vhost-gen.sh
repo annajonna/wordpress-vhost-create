@@ -72,7 +72,7 @@ VEFMAPPA=$(grep DocumentRoot $SKRA | sed 's/^[ \t]*//;s/[ \t]*$//;/^$/d;/^#/d' |
 
 pushd . >&/dev/null
 if [ -d "$VEFMAPPA" ] && [ -x "$VEFMAPPA" ] &&  [ -w "$VEFMAPPA" ] && cd "$VEFMAPPA" && cd ../../../ ; then
-    [[ "$PWD" != "/info/cms" ]] \
+    [[ "$PWD" != "/info" ]] \
         && echo "Cowardly refusing to operate on $VEFMAPPA" && exit 1
     popd
 
