@@ -21,7 +21,6 @@ case $LENTYPA in
 httpredirect)
   TEMPLA="/etc/httpd/conf/template.hi.is.ipv4.http.incl_redirect" 
   TEMPLB="/etc/httpd/conf/template.hi.is.ipv4.https.incl_redirect" 
-  echo "REDIRECT to: $LENREDIR"
   ;;
 *)
   echo "Ok, sleppum þessu þá ."
