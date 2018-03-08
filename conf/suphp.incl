@@ -1,5 +1,9 @@
+<IfModule mod_suphp.c>
+<IfModule mod_php5.c>
 php_admin_flag engine Off
+</IfModule>
 suPHP_Engine on
 AddHandler x-httpd-php .php .php3 .php4 .php5
 suPHP_AddHandler x-httpd-php
 #suPHP_UserGroup annaj starf
+</IfModule>

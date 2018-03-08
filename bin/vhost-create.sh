@@ -15,13 +15,15 @@ VAL3="3: Venjulegt lén á http, HTTPS er alltaf vísað á HTTP. www er hvorki 
 VAL4="4: Öruggt lén á https (SSL), HTTP er alltaf vísað á HTTPS.  www er alltaf fjarlægt í vafra notandans."
 VAL5="5: Lén sem svarar bæði HTTP og HTTPS og vefurinn sér um vísun á milli þeirra"
 VAL6="6: Lén sem svarar bæði HTTP og HTTPS og vísar alltaf á annað lén"
+VAL7="7: Lén sem svarar bæði HTTP og HTTPS og er með proxypass reverse á annað lén"
 echo "$VAL1"
 echo "$VAL2"
 echo "$VAL3"
 echo "$VAL4"
 echo "$VAL5"
 echo "$VAL6"
-read -p "Veldu lénategund [1-6]:" -n 1 LENTYPA
+echo "$VAL7"
+read -p "Veldu lénategund [1-7]:" -n 1 LENTYPA
 echo ""
 case $LENTYPA in
 1)
@@ -63,6 +65,18 @@ case $LENTYPA in
   if [ -n "$LENREDIR" ]; then
       echo "Redirect Permanent / $LENREDIR" > /etc/httpd/vhosts.d/redirect/${LEN}.redirect
       cat /etc/httpd/vhosts.d/redirect/${LEN}.redirect
+  fi
+  ;;
+7)
+  echo "$VAL7"
+  echo "Vísun á annað lén. Til þess þarf að skrifa þann URI sem lénið skal vísa á." 
+  read -p "URI :" LENREDIR
+  echo ""
+  rm -f ${LEN}_http*
+  ln --backup=off -s /usr/local/bin/vhost-gen-proxy.sh ${LEN}_httpproxy
+  if [ -n "$LENREDIR" ]; then
+      echo "Redirect Permanent / $LENREDIR" > /etc/httpd/vhosts.d/proxy/${LEN}.httpproxy
+      cat /etc/httpd/vhosts.d/proxy/${LEN}.httpproxy
   fi
   ;;
 *)

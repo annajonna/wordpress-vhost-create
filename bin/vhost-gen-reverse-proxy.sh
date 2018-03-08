@@ -18,9 +18,9 @@ echo "Tegund Lens er: ${LENTYPA}"
 SKRA="/etc/httpd/vhosts.d/${LEN}.http.redirect" 
 SKRB="/etc/httpd/vhosts.d/${LEN}.https.redirect" 
 case $LENTYPA in
-httpredirect)
-  TEMPLA="/etc/httpd/conf/template.hi.is.ipv4.http.incl_redirect" 
-  TEMPLB="/etc/httpd/conf/template.hi.is.ipv4.https.incl_redirect" 
+httpproxy)
+  TEMPLA="/etc/httpd/conf/template.hi.is.ipv4.http.incl_proxy" 
+  TEMPLB="/etc/httpd/conf/template.hi.is.ipv4.https.incl_proxy" 
   ;;
 *)
   echo "Ok, sleppum þessu þá ."
